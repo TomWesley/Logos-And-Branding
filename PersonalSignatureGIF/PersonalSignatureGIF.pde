@@ -35,10 +35,7 @@ void draw() {
   background(255);
   textFont(title);
 
-  /*if(counter > 150){
-   counter = 0;
-   }*/
-   counter = counter + 1;
+  counter = counter + 1;
 
   translate(width/2, height/2);
 
@@ -49,11 +46,13 @@ void draw() {
   stroke(255, 200, 10);
   beginShape();
   curveVertex(82, 0);
+   curveVertex(82, 0);
   strokeWeight(1);
-  for (float k=82; k<=132; k=k+2) {    
-    curveVertex(k, 0+8*sin(abs(k-132)*radians(counter*4)));
+  for (float k=0; k<=50; k=k+1) {    
+    curveVertex(82+k, .75*(abs(k-25)-25)*cos(.02*PI*abs(counter-45))*sin((k-.5*abs(counter-45))*PI*.1));
   }
 
+  curveVertex(132, 0);
   curveVertex(132, 0);
   endShape();
 
@@ -92,7 +91,7 @@ void draw() {
   //Translate the original diagram in with no moving parts to reset it 
 
   gifExport.setDelay(0);
-  if (counter>0.9 && counter <90.1) {
+  if (counter <90.1) {
     gifExport.addFrame();
   }
 }
