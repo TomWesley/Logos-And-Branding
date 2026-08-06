@@ -55,7 +55,7 @@ void draw() {
   textSize(15);
   text("Co-Founder - Secret Weapon",textX, 70);
   
-  text("440-320-3956",textX, 100);
+  text("555-555-5555",textX, 100); // placeholder — set your own number here
   //text("W", 260, 250);
   //Aura
   noFill();
